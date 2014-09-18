@@ -20,5 +20,5 @@ $ sudo apt-get npm
 https://github.com/remy/nodemon
 
 ```bash
-$ npm install -g nodemon
+$ sudo npm install -g nodemon
 ``` 
