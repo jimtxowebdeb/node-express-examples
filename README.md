@@ -14,3 +14,11 @@ $ sudo apt-get install nodejs
 $ sudo apt-get npm
 
 ```
+
+#### install nodemon
+
+https://github.com/remy/nodemon
+
+```bash
+$ npm install -g nodemon
+``` 
