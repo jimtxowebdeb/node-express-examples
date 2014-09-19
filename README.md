@@ -21,4 +21,11 @@ https://github.com/remy/nodemon
 
 ```bash
 $ sudo npm install -g nodemon
+$ nodemon app.js
 ``` 
+
+debug:
+```bash
+$ sudo npm install -g node-inspector
+$ node-debug app.js
+```
