@@ -25,6 +25,8 @@ $ sudo apt-get npm
 
 https://github.com/remy/nodemon
 
+https://developer.chrome.com/devtools/index
+
 ```bash
 $ sudo npm install -g nodemon
 $ nodemon app.js
