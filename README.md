@@ -29,6 +29,7 @@ https://developer.chrome.com/devtools/index
 
 ```bash
 $ sudo npm install -g nodemon
+($ sudo chown -R yourusername ~/.npm)
 $ nodemon app.js
 ``` 
 #### debug:
