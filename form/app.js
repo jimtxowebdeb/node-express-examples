@@ -3,6 +3,16 @@
 var express = require('express');
 var app = express();
 
+// body-parser for POST
+// https://github.com/expressjs/body-parser
+var bodyParser = require('body-parser');
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+
+
+// **********************************************
 // GET /search?q=tobi+ferret
 // curl http://localhost:3000/search?q=tobi+ferret
 app.get('/search', function(req, res) {
@@ -18,8 +28,9 @@ app.get('/user/:name', function(req, res) {
 // POST /user/
 // curl --data "name=<name>" http://localhost:3000/user
 app.post('/user/', function(req, res) {
-    res.send('User ' + req.params('name') + ' added.');
+    res.send('User ' + req.body.name + ' added');
 });
+// ************************************************
 
 
 var server = app.listen(process.env.PORT || 3000, function(){
