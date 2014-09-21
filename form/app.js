@@ -11,6 +11,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+// public files
+app.use(express.static(__dirname + '/public'));
+
 
 // **********************************************
 // GET /search?q=tobi+ferret
