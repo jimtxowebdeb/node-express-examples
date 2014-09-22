@@ -39,3 +39,15 @@ https://github.com/node-inspector/node-inspector
 $ sudo npm install -g node-inspector
 $ node-debug app.js
 ```
+
+#### HTTP Request:
+
+curl:
+
+```bash
+$ sudo apt-get install curl
+```
+
+Postman (chrome extension):
+
+https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm
