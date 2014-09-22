@@ -1,5 +1,5 @@
 // view engine example
-	
+
 var express = require('express'),
 	exphbs  = require('express-handlebars');
 
@@ -28,6 +28,16 @@ app.get('/table-array', function (req, res) {
 						{name: 'Peru'},
 						{name: 'Koxme'}
 						]};
+    res.render('table2', users);
+});
+
+
+app.get('/table-array-title', function (req, res) {
+    var users = {title:'Izenak',
+                 users: [
+                        {name: 'Peru'},
+                        {name: 'Koxme'}
+                        ]};
     res.render('table2', users);
 });
 
