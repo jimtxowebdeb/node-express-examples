@@ -28,7 +28,7 @@ app.get('/table-array', function (req, res) {
 						{name: 'Peru'},
 						{name: 'Koxme'}
 						]};
-    res.render('table', users);
+    res.render('table2', users);
 });
 
 
