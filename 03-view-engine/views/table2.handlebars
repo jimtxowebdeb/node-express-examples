@@ -5,6 +5,12 @@
 </head>
 <body>
 
+    {{#if title}}
+    <h3>{{title}}</h3>
+    {{else}}
+    <h3>No title</h3>
+    {{/if}}
+
     <table>
     	{{#each users}}
     	<tr>
