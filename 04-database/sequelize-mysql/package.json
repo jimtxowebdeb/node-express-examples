@@ -1,0 +1,11 @@
+{
+  "name": "database",
+  "description": "database test app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.x",
+    "mysql": "^2.5.1",
+    "sequelize": "^2.0.0-rc1"
+  }
+}
