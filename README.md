@@ -12,12 +12,9 @@ http://expressjs.com/guide.html
 [http://nodejs.org/](http://nodejs.org/)
 
 ```bash
-
 $ sudo add-apt-repository ppa:chris-lea/node.js  
 $ sudo apt-get update  
 $ sudo apt-get install nodejs
-
-
 ```
 
 #### nodemon
