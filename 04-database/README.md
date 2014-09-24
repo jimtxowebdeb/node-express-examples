@@ -9,6 +9,11 @@ $ npm install --save sequelize
 $ npm install --save mysql
 ```
 
+#### Mongoose
+
+http://mongoosejs.com/
+
+
 #### MySql
 ```bash
 $ sudo apt-get install mysql-server
