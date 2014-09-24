@@ -9,7 +9,7 @@ $ npm install --save sequelize
 $ npm install --save mysql
 ```
 
-### MySql
+##### MySql
 ```bash
 $ sudo apt-get install mysql-server
 ```
