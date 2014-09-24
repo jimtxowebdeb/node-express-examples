@@ -1,6 +1,6 @@
-### node database
+# node database
 
-#### sequelize
+## sequelize
 
 http://sequelizejs.com/
 
@@ -9,16 +9,7 @@ $ npm install --save sequelize
 $ npm install --save mysql
 ```
 
-#### Mongoose
-
-http://mongoosejs.com/
-
-http://www.mongodb.org/
-
-https://mongolab.com/
-
-
-#### MySql
+### MySql
 ```bash
 $ sudo apt-get install mysql-server
 ```
@@ -53,3 +44,10 @@ mysql> describe tablename;
 $ mysql -u username -p database_name < file.sql
 $ mysqldump db_name > backup-file.sql
 ```
+## Mongoose
+
+http://mongoosejs.com/
+
+http://www.mongodb.org/
+
+https://mongolab.com/
