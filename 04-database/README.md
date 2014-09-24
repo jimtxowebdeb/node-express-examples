@@ -51,3 +51,16 @@ http://mongoosejs.com/
 http://www.mongodb.org/
 
 https://mongolab.com/
+
+#### install mongodb
+
+http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
+
+```bash
+$ sudo apt-get install mongodb-org
+$ service mongodb start
+$ mongo
+```
+http://docs.mongodb.org/manual/tutorial/getting-started/
+
+...
