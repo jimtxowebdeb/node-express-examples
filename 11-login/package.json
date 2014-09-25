@@ -1,0 +1,11 @@
+{
+  "name": "login",
+  "description": "login",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.x",
+    "passport": "^0.2.1",
+    "passport-google-oauth": "^0.1.5"
+  }
+}
