@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 // GET /search?q=tobi+ferret
 // curl http://localhost:3000/search?q=tobi+ferret
 app.get('/search', function(req, res) {
-    res.send('No result for ' + req.query.q);
+    res.send('Iepaaaaa ' + req.query.q);
 });
 
 // GET /user/<name>
@@ -27,6 +27,29 @@ app.get('/search', function(req, res) {
 app.get('/user/:name', function(req, res) {
     res.send('Hello ' + req.params.name);
 });
+
+app.get('/:year/:day', function(req, res) {
+    res.send('year/day: ' + req.params.year + '/' + req.params.day);
+});
+
+app.get('/listademareas', function(req, res) {
+
+	var mareas = {
+		dia : "11/10/2015",
+		pleamar: [
+					"12:12",
+					"0:23"
+				],
+		bajamar: [
+					"17:09",
+					"5:23"
+				]
+	};
+
+	res.json(mareas);
+
+});
+
 
 // POST /user/
 // curl --data "name=<name>" http://localhost:3000/user
