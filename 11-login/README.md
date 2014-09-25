@@ -10,4 +10,8 @@ http://passportjs.org/
 
 http://scotch.io/series/easy-node-authentication
 
+https://cloud.google.com/
+
+https://console.developers.google.com
+
 TODO
