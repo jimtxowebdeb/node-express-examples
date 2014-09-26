@@ -14,4 +14,6 @@ https://cloud.google.com/
 
 https://console.developers.google.com
 
-TODO
+## run
+
+CLIENT_ID="xxxxxxx" CLIENT_SECRET="xxxxxxx" node app.js

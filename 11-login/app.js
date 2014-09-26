@@ -14,15 +14,21 @@ var session = require('express-session');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
-app.use(passport.initialize());
 app.use(session({ secret: 'dasjdhuueneud8jndsuswhjndh',
                   saveUninitialized: true,
                   resave: true }));
+
+app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+// public files
+app.use(express.static(__dirname + '/public'));
+
+
+
 passport.use(new GoogleStrategy({
-    clientID: "598288931515-n6v2sg55gr3t71ds7jjs617o297405h5.apps.googleusercontent.com",
-    clientSecret: "Y-W2nZblGM4KBopww0MFVGPk",
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
     callbackURL: "http://127.0.0.1:3000/auth/google/callback",
     // https://developers.google.com/+/api/oauth#login-scopes
     // scope: 'https://www.googleapis.com/auth/plus.login'
@@ -32,7 +38,8 @@ passport.use(new GoogleStrategy({
     // User.findOrCreate({ googleId: profile.id }, function (err, user) {
     //   return done(err, user);
     // });
-    return done(null, profile.id);
+    // return done(null, profile.id);
+    return done(null, profile.emails[0].value); //email
   }
 ));
 
@@ -53,7 +60,7 @@ function isLoggedIn(req, res, next) {
         return next();
 
     // if they aren't redirect them to the home page
-    res.redirect('/auth/google');
+    res.redirect('/login.html');
 }
 
 
@@ -64,22 +71,16 @@ function isLoggedIn(req, res, next) {
 app.get('/auth/google', passport.authenticate('google'));
 
 app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/login' }),
+  passport.authenticate('google', { failureRedirect: '/login.html' }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/');
   });
 
 
-
 app.get('/', isLoggedIn, function(req, res) {
-    res.send('login OK!');
+    res.send('login OK! <br> Hello ' + req.user);
 });
-
-// app.get('/', function(req, res) {
-//     res.send('login OK!');
-// });
-
 
 
 // route for logging out
