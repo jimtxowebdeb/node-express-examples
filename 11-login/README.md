@@ -8,6 +8,8 @@ node + express + passport:
 
 http://passportjs.org/
 
+https://github.com/jaredhanson/passport-google-oauth
+
 http://scotch.io/series/easy-node-authentication
 
 https://cloud.google.com/
