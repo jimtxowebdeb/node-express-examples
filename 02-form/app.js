@@ -16,6 +16,12 @@ app.use(express.static(__dirname + '/public'));
 
 
 // **********************************************
+
+app.get('/', function(req, res) {
+    res.redirect('/hello.html');
+});
+
+
 // GET /search?q=tobi+ferret
 // curl http://localhost:3000/search?q=tobi+ferret
 app.get('/search', function(req, res) {

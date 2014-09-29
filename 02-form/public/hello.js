@@ -39,4 +39,25 @@ $(document).ready(function(){
 
     });
 
+
+    $( "#formlistamareas" ).submit(function( event ) {
+
+        console.log("submit");
+        /* Stop form from submitting normally */
+        event.preventDefault();
+
+        $.ajax({
+           type: "GET",
+           url: "/listademareas",
+           dataType: "json",
+           success: function(data){
+              console.log(data);
+              // https://developer.mozilla.org/en-US/docs/Web/API/document.getElementById
+              document.getElementById("listademareasDiv").innerHTML = data.dia;
+              var mareas = "<p> Dia:"+data.dia+"</p><p>Pleamar:<br>"+data.pleamar[0]+";"+data.pleamar[1]+"</p>"
+              $( "#listademareasDiv" ).html(mareas);
+           }
+        });
+
+    });
 });
