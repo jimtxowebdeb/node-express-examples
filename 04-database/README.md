@@ -52,6 +52,8 @@ http://www.mongodb.org/
 
 https://mongolab.com/
 
+Join in MongoDB using Mongoogse "population": http://mongoosejs.com/docs/populate.html
+
 #### install mongodb
 
 http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
