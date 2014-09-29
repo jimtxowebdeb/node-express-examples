@@ -18,10 +18,50 @@ var kittySchema = mongoose.Schema({
 
 var Kitten = mongoose.model('Kitten', kittySchema);
 
+// remove all documents
+Kitten.remove({}, function (err) {
+  if (err) return handleError(err);
+  // removed!
+});
+
 var silence = new Kitten({ name: 'Silence' });
 console.log(silence.name); // 'Silence'
 
 silence.save(function (err, silence) {
   if (err) return console.error(err);
+  console.log('Silence created:');
   console.log(silence);
 });
+
+
+var black = new Kitten({ name: 'black' });
+console.log(black.name); // 'Black'
+
+black.save(function (err, black) {
+  if (err) return console.error(err);
+  console.log('Black created:');
+  console.log(black);
+});
+
+
+function findAllKittens () {
+    // find all
+    Kitten.find({}, function (err, kittens) {
+      if (err) return console.error(err);
+      console.log('Find all kittens:');
+      console.log(kittens);
+    });
+}
+
+function findSilence () {
+    // find one
+    Kitten.find({ name: 'Silence' }, function (err, kittens) {
+      if (err) return console.error(err);
+      console.log('Find Silence:');
+      console.log(kittens);
+    });
+}
+
+
+setTimeout(findSilence, 2000);
+setTimeout(findAllKittens, 5000);
