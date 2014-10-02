@@ -20,7 +20,7 @@ app.get('/with-layout', function (req, res) {
 
 
 app.get('/table', function (req, res) {
-    res.render('table', {name: 'Peru'});
+    res.render('table', {name: 'Koxme'});
 });
 
 app.get('/table-array', function (req, res) {
@@ -33,7 +33,7 @@ app.get('/table-array', function (req, res) {
 
 
 app.get('/table-array-title', function (req, res) {
-    var users = {title:'Izenak',
+    var users = {title:'Nombres',
                  users: [
                         {name: 'Peru'},
                         {name: 'Koxme'}
