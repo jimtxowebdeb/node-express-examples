@@ -1,5 +1,9 @@
 # node database
 
+## mysql node
+
+https://www.npmjs.org/package/mysql
+
 ## sequelize
 
 http://sequelizejs.com/
