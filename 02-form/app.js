@@ -3,6 +3,10 @@
 var express = require('express');
 var app = express();
 
+var exphbs  = require('express-handlebars');
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+
 // body-parser for POST
 // https://github.com/expressjs/body-parser
 var bodyParser = require('body-parser');
