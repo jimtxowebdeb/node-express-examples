@@ -1,22 +1,18 @@
-// var flash = require('connect-flash');
-
 var express = require('express');
 var app = express();
-
+var bodyParser = require('body-parser');
 var session = require('express-session');
-
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-app.use(session({ secret: 'dasjdhuueneud8jndsuswhjndh',
-                  saveUninitialized: true,
-                  resave: true }));
 
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
 
-// public files
-app.use(express.static(__dirname + '/public'));
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
 
 
 passport.use(new LocalStrategy(
@@ -31,29 +27,67 @@ passport.use(new LocalStrategy(
     //   }
     //   return done(null, user);
     // });
-    console.log(username);
-    console.log(password);
-    return done(null, username);
+
+    if ((username == 'koxme') && (password == 'koxmepass')) {
+      // login OK
+      return done(null, username);
+    } else {
+      // login KO
+      return done(null, false);
+    }
   }
 ));
 
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
 
-passport.deserializeUser(function(user, done) {
-  done(null, user);
-});
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(session({ secret: 'dasjdhuueneud8jndsuswhjndh',
+                  saveUninitialized: true,
+                  resave: true }));
+
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+// public files
+app.use(express.static(__dirname + '/public'));
 
 
 app.post('/login',
-  passport.authenticate('local', { successRedirect: '/',
-                                   failureRedirect: '/login',
-                                   failureFlash: true })
+  passport.authenticate('local', { successRedirect: '/loginSuccess',
+                                   failureRedirect: '/loginFailure',
+                                   failureFlash: false })
 );
 
 app.get('/', function(req,res) {
   res.redirect('index.html');
+});
+
+app.get('/loginFailure', function(req,res) {
+  res.send('Login KO. username/password incorrect');
+});
+
+
+app.get('/loginSuccess', ensureAuthenticated, function(req,res) {
+  res.send('Login OK. Hello ' + req.user);
+});
+
+// Simple route middleware to ensure user is authenticated.
+//   Use this route middleware on any resource that needs to be protected.  If
+//   the request is authenticated (typically via a persistent login session),
+//   the request will proceed.  Otherwise, the user will be redirected to the
+//   login page.
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/');
+}
+
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
+app.get('/otherpage', ensureAuthenticated, function(req, res){
+  res.send('other page');
 });
 
 
