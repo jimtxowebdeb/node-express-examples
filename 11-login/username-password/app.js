@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var bcrypt = require('bcrypt-nodejs');
 
 
 passport.serializeUser(function(user, done) {
@@ -28,13 +29,37 @@ passport.use(new LocalStrategy(
     //   return done(null, user);
     // });
 
-    if ((username == 'koxme') && (password == 'koxmepass')) {
+
+    // hash of koxme password
+    var hash = '$2a$10$jwDOXQmYn/LDO291d1C0h.yPDVeh4Z11QWQ/DMLGmhf52XNCgFugm';
+    if ((username == 'koxme') && (bcrypt.compareSync(password, hash))) {
       // login OK
       return done(null, username);
     } else {
       // login KO
       return done(null, false);
     }
+
+    // if (username == 'koxme') {
+    //   // hash of koxme password
+    //   var hash = '$2a$10$jwDOXQmYn/LDO291d1C0h.yPDVeh4Z11QWQ/DMLGmhf52XNCgFugm';
+
+    //   bcrypt.compare(password, hash, function(err, res) {
+    //       if (res) {
+    //           // password OK
+    //           return done(null, username);
+    //       } else {
+    //           // password KO
+    //           return done(null, false);
+    //       }
+    //   });
+
+    // } else {
+    //   // username KO
+    //   return done(null, false);
+    // }
+
+
   }
 ));
 
