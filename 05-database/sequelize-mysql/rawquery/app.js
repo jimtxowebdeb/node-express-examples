@@ -74,19 +74,40 @@ app.post('/user/add', function(req, res) {
 	var surname = req.body.surname;
 	var age = req.body.age;
 
-	// var sql = 'INSERT INTO users (name, surname, age) VALUES (\''+name+'\', \''+surname+'\', \''+age+'\');';
+	// validate 
+	// TODO
 
-	// console.log(sql);
+	var sql = 'INSERT INTO users (name, surname, age) VALUES (\''+name+'\', \''+surname+'\', \''+age+'\');';
+
+	console.log(sql);
 
 	db
-		.query('INSERT INTO users (name, surname, age) VALUES (:name, :surname, :age);', null, {raw:true}, {name:name, surname:surname, age:age})
+		.query(sql, null, {raw:true})
 
 		.success(function(rows){
 			// no errors
-			console.log({"msg":"insert OK"});
-			res.json({"msg":"insert OK"});
+			console.log({"msg":"insert OK", "sql":sql});
+			res.json({"msg":"insert OK", "sql":sql});
 			// res.json(JSON.stringify(rows));
 	});
+
+});
+
+// delete user
+app.get('/users/delete/:id', function(req, res) {
+
+	var id = req.params.id;
+	if (!validator.isInt(id)) {
+		res.status(500).json({"error":"user id must be numeric"});
+	} else {
+		// Raw query
+		db.query('DELETE FROM users WHERE idusers='+ id).success(function(rows){
+			// no errors
+			console.log({"msg":"delete OK", "id":id});
+			res.json({"msg":"delete OK", "id":id});
+			// res.json(JSON.stringify(rows));
+		});
+	}
 
 });
 
