@@ -63,6 +63,9 @@ app.get('/users/:id', function(req, res) {
 
 });
 
+
+
+
 // insert
 // curl --data "name=<name>&surname=<surname>&age=<age>" http://localhost:3000/user/add
 app.post('/user/add', function(req, res) {
@@ -71,15 +74,18 @@ app.post('/user/add', function(req, res) {
 	var surname = req.body.surname;
 	var age = req.body.age;
 
-	var sql = 'INSERT INTO users (name, surname, age) VALUES (\''+name+'\', \''+surname+'\', \''+age+'\');';
+	// var sql = 'INSERT INTO users (name, surname, age) VALUES (\''+name+'\', \''+surname+'\', \''+age+'\');';
 
-	console.log(sql);
+	// console.log(sql);
 
-	db.query(sql).success(function(rows){
-		// no errors
-		console.log({"msg":"insert OK", "sql":sql});
-		res.json({"msg":"insert OK", "sql":sql});
-		// res.json(JSON.stringify(rows));
+	db
+		.query('INSERT INTO users (name, surname, age) VALUES (:name, :surname, :age);', null, {raw:true}, {name:name, surname:surname, age:age})
+
+		.success(function(rows){
+			// no errors
+			console.log({"msg":"insert OK"});
+			res.json({"msg":"insert OK"});
+			// res.json(JSON.stringify(rows));
 	});
 
 });
