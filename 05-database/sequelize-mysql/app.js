@@ -4,6 +4,12 @@
 var express = require('express');
 var app = express();
 
+// body-parser for post request
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+
 // https://www.npmjs.org/package/validator
 var validator = require('validator');
 
@@ -56,6 +62,28 @@ app.get('/users/:id', function(req, res) {
 	}
 
 });
+
+// insert
+// curl --data "name=<name>&surname=<surname>&age=<age>" http://localhost:3000/user/add
+app.post('/user/add', function(req, res) {
+	
+	var name = req.body.name;
+	var surname = req.body.surname;
+	var age = req.body.age;
+
+	var sql = 'INSERT INTO users (name, surname, age) VALUES (\''+name+'\', \''+surname+'\', \''+age+'\');';
+
+	console.log(sql);
+
+	db.query(sql).success(function(rows){
+		// no errors
+		console.log({"msg":"insert OK", "sql":sql});
+		res.json({"msg":"insert OK", "sql":sql});
+		// res.json(JSON.stringify(rows));
+	});
+
+});
+
 
 var server = app.listen(process.env.PORT || 3000, function(){
 	console.log('Listening in port %d', server.address().port);
