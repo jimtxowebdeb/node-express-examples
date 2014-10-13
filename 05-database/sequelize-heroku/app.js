@@ -17,17 +17,12 @@ var validator = require('validator');
 var Sequelize = require('sequelize');
 var db = null;
 
-if (process.env.HEROKU_POSTGRESQL_BRONZE_URL) {
-    // the application is executed on Heroku ... use the postgres database
-    var match = process.env.HEROKU_POSTGRESQL_BRONZE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
- 
-    db = new Sequelize(match[5], match[1], match[2], {
-      dialect:  'postgres',
-      protocol: 'postgres',
-      port:     match[4],
-      host:     match[3],
-      logging:  true //false
-    });
+console.log(process.env.DATABASE_URL);
+
+
+if (process.env.DATABASE_URL) {
+    // the application is executed on Heroku ... use the postgres database 
+    db = new Sequelize(process.env.DATABASE_URL);
   } else {
     // the application is executed on the local machine ... use mysql
 	// var db = new sqlze('databasename', 'username', 'password',{
@@ -48,6 +43,21 @@ db
 		}
 	});
 //
+
+
+// app.get('/createTableUsers', function(req, res) {
+
+// 	// Raw query
+// 	db.query('CREATE TABLE users (userid integer CONSTRAINT firstkey PRIMARY KEY,name varchar(40),surname varchar(40),age integer);').success(function(rows){
+// 		// no errors
+// 		console.log(rows);
+// 		res.json(rows);
+// 		// res.json(JSON.stringify(rows));
+// 	});
+
+// });
+
+
 
 app.get('/users', function(req, res) {
 
