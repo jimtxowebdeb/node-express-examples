@@ -15,4 +15,6 @@ Heroku:
 
 ```bash
 $ heroku addons:add heroku-postgresql:dev
+
+$ heroku pg:psql --app sequelize-heroku HEROKU_POSTGRESQL_MAUVE
 ```

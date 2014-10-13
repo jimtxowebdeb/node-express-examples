@@ -17,9 +17,6 @@ var validator = require('validator');
 var Sequelize = require('sequelize');
 var db = null;
 
-console.log(process.env.DATABASE_URL);
-
-
 if (process.env.DATABASE_URL) {
     // the application is executed on Heroku ... use the postgres database 
     db = new Sequelize(process.env.DATABASE_URL);
@@ -44,19 +41,19 @@ db
 	});
 //
 
-
 // app.get('/createTableUsers', function(req, res) {
 
-// 	// Raw query
-// 	db.query('CREATE TABLE users (userid integer CONSTRAINT firstkey PRIMARY KEY,name varchar(40),surname varchar(40),age integer);').success(function(rows){
-// 		// no errors
-// 		console.log(rows);
-// 		res.json(rows);
-// 		// res.json(JSON.stringify(rows));
-// 	});
+/*
+	// Raw query
+	db.query('CREATE TABLE users (userid SERIAL CONSTRAINT firstkey PRIMARY KEY,name varchar(40),surname varchar(40),age integer);').success(function(rows){
+		// no errors
+		console.log(rows);
+		res.json(rows);
+		// res.json(JSON.stringify(rows));
+	});
 
-// });
-
+});
+*/
 
 
 app.get('/users', function(req, res) {
@@ -80,7 +77,7 @@ app.get('/users/:id', function(req, res) {
 		res.status(500).json({"error":"user id must be numeric"});
 	} else {
 		// Raw query
-		db.query('SELECT * FROM users WHERE idusers='+ id).success(function(rows){
+		db.query('SELECT * FROM users WHERE userid='+ id).success(function(rows){
 			// no errors
 			console.log(rows);
 			res.json(rows);
@@ -128,7 +125,7 @@ app.get('/users/delete/:id', function(req, res) {
 		res.status(500).json({"error":"user id must be numeric"});
 	} else {
 		// Raw query
-		db.query('DELETE FROM users WHERE idusers='+ id).success(function(rows){
+		db.query('DELETE FROM users WHERE userid='+ id).success(function(rows){
 			// no errors
 			console.log({"msg":"delete OK", "id":id});
 			res.json({"msg":"delete OK", "id":id});
