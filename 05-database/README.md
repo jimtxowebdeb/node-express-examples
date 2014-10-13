@@ -48,6 +48,24 @@ mysql> describe tablename;
 $ mysql -u username -p database_name < file.sql
 $ mysqldump db_name > backup-file.sql
 ```
+
+#####Postgresql
+http://www.postgresql.org/
+
+Ubuntu install:
+http://www.postgresql.org/download/linux/ubuntu/
+
+```bash
+# ubuntu 12.04
+$ apt-get install postgresql-9.1
+```
+
+mysql to postgresql migration:
+https://github.com/lanyrd/mysql-postgresql-converter
+https://devcenter.heroku.com/articles/heroku-mysql
+
+
+
 ## Mongoose
 
 http://mongoosejs.com/
