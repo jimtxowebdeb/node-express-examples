@@ -59,7 +59,7 @@ http://www.postgresql.org/download/linux/ubuntu/
 
 ```bash
 # ubuntu 12.04
-$ sudo oapt-get install postgresql-9.1
+$ sudo oapt-get install postgresql-9.1 libpq-dev
 ```
 Graphical admin:
 ```bash
