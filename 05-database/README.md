@@ -52,19 +52,29 @@ $ mysqldump db_name > backup-file.sql
 #####Postgresql
 http://www.postgresql.org/
 
+https://help.ubuntu.com/community/PostgreSQL
+
 Ubuntu install:
 http://www.postgresql.org/download/linux/ubuntu/
 
 ```bash
 # ubuntu 12.04
-$ apt-get install postgresql-9.1
+$ sudo oapt-get install postgresql-9.1
 ```
+Graphical admin:
+```bash
+$ sudo apt-get install pgadmin3
+``` 
 
 mysql to postgresql migration:
 https://github.com/lanyrd/mysql-postgresql-converter
+
 https://devcenter.heroku.com/articles/heroku-mysql
 
-
+#####Postgresql command line tutorial:
+```bash
+$ createdb mydb
+```
 
 ## Mongoose
 
