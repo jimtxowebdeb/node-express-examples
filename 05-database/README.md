@@ -74,6 +74,10 @@ https://devcenter.heroku.com/articles/heroku-mysql
 #####Postgresql command line tutorial:
 ```bash
 $ createdb mydb
+$ dropdb mydb
+
+# access to db
+$ psql mydb
 ```
 
 ## Mongoose
