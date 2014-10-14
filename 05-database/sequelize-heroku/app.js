@@ -70,7 +70,7 @@ app.get('/users', function(req, res) {
 });
 
 
-app.get('/users/:id', function(req, res) {
+app.get('/users/id/:id', function(req, res) {
 
 	var id = req.params.id;
 	if (!validator.isInt(id)) {
@@ -88,6 +88,17 @@ app.get('/users/:id', function(req, res) {
 });
 
 
+app.get('/users/names', function(req, res) {
+
+	// Raw query
+	db.query('SELECT name FROM users').success(function(rows){
+		// no errors
+		console.log(rows);
+		res.json(rows);
+		// res.json(JSON.stringify(rows));
+	});
+
+});
 
 
 // insert
