@@ -3,7 +3,6 @@
 // https://www.npmjs.org/package/bcrypt-nodejs
 var bcrypt = require('bcrypt-nodejs');
 
-var user = process.env.USER;
 var password = process.env.PASSWORD;
 
 bcrypt.hash("bacon", null, null, function(err, hash) {
