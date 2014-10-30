@@ -18,3 +18,7 @@ $ heroku addons:add heroku-postgresql:dev
 
 $ heroku pg:psql --app sequelize-heroku HEROKU_POSTGRESQL_MAUVE
 ```
+
+Postgresql:
+
+http://www.postgresql.org/docs/9.1/static/sql-createtable.html
