@@ -32,6 +32,13 @@ app.post('/sendmail', function(req, res) {
 
 });
 
+/*
+// POST /recivemail
+app.post('/recivemail', function(req, res) {
+	// recive email from mailgun only if you have a custom domain 
+	// http://documentation.mailgun.com/quickstart-receiving.html#supported-actions-for-routes
+});
+*/
 
 var server = app.listen(process.env.PORT || 3000, function(){
     console.log('Listening in port %d', server.address().port);
