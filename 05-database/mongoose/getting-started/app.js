@@ -20,7 +20,7 @@ db.once('open', function callback() {
 // schema
 var kittySchema = mongoose.Schema({
     name: String
-});
+},{ collection : 'kittens' });
 
 // model
 var Kitten = mongoose.model('Kitten', kittySchema);

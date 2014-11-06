@@ -1,7 +1,3 @@
-http://mongoosejs.com/docs/index.html
+Don't Work
 
-Run:
-
-```bash
-$ USER=xxxxx PASSWORD=xxxxx nodemon app.js
-```
+use gmail with OAUTH2
