@@ -37,6 +37,10 @@ $(document).ready(function(){
 
         });
 
+        // other options using $.post
+        // http://api.jquery.com/jquery.post/
+
+
     });
 
 
@@ -58,6 +62,9 @@ $(document).ready(function(){
               $( "#listademareasDiv" ).html(mareas);
            }
         });
+
+        // other options using $.get
+        // http://api.jquery.com/jquery.get/
 
     });
 });
