@@ -43,6 +43,7 @@ mysql> create table ...
 mysql> insert ...
 mysql> show tables;
 mysql> describe tablename;
+mysql> SELECT User FROM mysql.user;
 
 // http://stackoverflow.com/questions/17666249/how-to-import-a-sql-file-using-the-command-line-in-mysql
 $ mysql -u username -p database_name < file.sql
