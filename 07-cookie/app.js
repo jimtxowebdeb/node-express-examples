@@ -29,7 +29,7 @@ app.get('/readcookie', function(req, res) {
 
 
 // http://localhost:3000/readcookie
-app.get('/readcookie', function(req, res) {
+app.get('/clearcookie', function(req, res) {
     res.clearCookie('name');
     res.send();
 });
