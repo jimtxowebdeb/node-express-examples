@@ -10,8 +10,8 @@ app.use(cookieParser());
 // http://localhost:3000/setcookie
 app.get('/setcookie', function(req, res) {
     
-    res.cookie('name', 'tobi', { domain: '.example.com', path: '/admin', secure: true });
-    res.cookie('rememberme', '1', { expires: new Date(Date.now() + 900000), httpOnly: true });
+    //res.cookie('rememberme', '1', { expires: new Date(Date.now() + 900000), httpOnly: true });
+    
     // The maxAge option is a convenience option for setting "expires" relative to the current time in milliseconds. The following is equivalent to the previous example.
     res.cookie('rememberme', '1', { maxAge: 900000, httpOnly: true });
 
@@ -24,6 +24,8 @@ app.get('/setcookie', function(req, res) {
 
 // http://localhost:3000/readcookie
 app.get('/readcookie', function(req, res) {
+    console.log(req.cookies.rememberme);
+    console.log(req.cookies.cart);
     res.send();
 });
 
@@ -31,6 +33,8 @@ app.get('/readcookie', function(req, res) {
 // http://localhost:3000/readcookie
 app.get('/clearcookie', function(req, res) {
     res.clearCookie('name');
+    res.clearCookie('rememberme');
+    res.clearCookie('cart');
     res.send();
 });
 
