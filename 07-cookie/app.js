@@ -24,9 +24,10 @@ app.get('/setcookie', function(req, res) {
 
 // http://localhost:3000/readcookie
 app.get('/readcookie', function(req, res) {
-    console.log(req.cookies.rememberme);
-    console.log(req.cookies.cart);
-    res.send();
+    var rememberme = "rememberme:" + req.cookies.rememberme;
+    var cart = "cart:" + req.cookies.cart;
+    
+    res.send(rememberme + "<br />" + cart.toString());
 });
 
 
