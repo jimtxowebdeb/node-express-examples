@@ -20,3 +20,6 @@ https://console.developers.google.com
 
 4 - You have the API KEY
 
+Test:
+
+https://developers.google.com/oauthplayground/
