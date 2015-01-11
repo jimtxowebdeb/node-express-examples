@@ -27,47 +27,47 @@ var REDIRECT_URL = 'https://developers.google.com/oauthplayground';
 var oauth2Client = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL);
 
 oauth2Client.setCredentials({
-  access_token: 'ya29.-ACdi_mwNLDgsSGpIiIp3gggcR0RoiywMCxHA2TopKl_XuIMG0zQ2swLPIvVZQs5fyaCVcx07sCvIg'
+  access_token: 'ya29.-ADtYiWbxSUJLsLMQPqd8PP1bCt7aLHG3_LV2eojR7Rm-m27ptUdeeklU4hgHzEIZqM4t2X2P0hOta',
+  refresh_token: '1/BOJJLlc19CyoSel3c5dVIKtU8yABgiptc2qEP5HK7zE',
+  expiry_date: (new Date()).getTime() // this create a new access token
 });
 
-// insertion example
-drive.files.insert({
-  resource: {
-    title: 'Test',
-    mimeType: 'text/plain'
-  },
-  media: {
-    mimeType: 'text/plain',
-    body: 'Hello World updated with metadata'
-  },
-  auth: oauth2Client
-}, function(err, response) {
-  console.log('error:', err, 'inserted:', response);
-});
+var scopes = [
+  'https://www.googleapis.com/auth/drive'
+];
 
-// update with no metadata
-drive.files.update({
-  fileId: '0B-skmV2m1Arna1lZSGFHNWx6YXc',
-  media: {
-    mimeType: 'text/plain',
-    body: 'Hello World updated with metadata'
-  },
-  auth: oauth2Client
-}, function(err, response) {
-  console.log('error:', err, 'updated:', response);
+var url = oauth2Client.generateAuthUrl({
+  access_type: 'offline', // 'online' (default) or 'offline' (gets refresh_token)
+  scopes: scopes // If you only need one scope you can pass it as string
 });
+/*
+// Retrieve tokens via token exchange explained above or set them:
+oauth2Client.setCredentials({
+  access_token: 'ACCESS TOKEN HERE',
+  refresh_token: 'REFRESH TOKEN HERE'
+});
+*/
 
-// update example with metadata update
-drive.files.update({
-  fileId: '0B-skmV2...',
-  resource: {
-    title: 'Updated title'
-  },
-  media: {
-    mimeType: 'text/plain',
-    body: 'Hello World updated with metadata'
-  },
-  auth: oauth2Client
-}, function(err, response) {
-  console.log('error:', err, 'updated:', response);
-});
+
+//oauth2Client.refreshAccessToken(function(err, tokens) {
+  // your access_token is now refreshed and stored in oauth2Client
+  // store these new tokens in a safe place (e.g. database)
+
+  // insertion example
+  drive.files.insert({
+    resource: {
+      title: 'Test',
+      mimeType: 'text/plain'
+    },
+    media: {
+      mimeType: 'text/plain',
+      body: 'Hello World updated with metadata'
+    },
+    auth: oauth2Client
+  }, function(err, response) {
+    console.log('error:', err, 'inserted:', response);
+  });
+
+
+//});
+
