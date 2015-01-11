@@ -27,7 +27,7 @@ var url = oauth2Client.generateAuthUrl({
 });
 
 
-calendar.calendarList.list({}, function(err, response) {
+calendar.calendarList.list({auth: oauth2Client}, function(err, response) {
     console.log('error:', err, 'inserted:', response);
 });
 
