@@ -61,7 +61,7 @@ oauth2Client.setCredentials({
     },
     media: {
       mimeType: 'text/plain',
-      body: 'Hello World updated with metadata'
+      body: 'Hello World'
     },
     auth: oauth2Client
   }, function(err, response) {
