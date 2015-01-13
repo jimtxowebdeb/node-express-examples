@@ -1,5 +1,5 @@
 http://mongoosejs.com/
 
-Start:
+Run:
 
 $ USER=xxxx PASSWORD=xxxx node app.js
