@@ -19,7 +19,8 @@ db.once('open', function callback() {
 
 // schema
 var kittySchema = mongoose.Schema({
-    name: String
+    name: String,
+    age: Number
 },{ collection : 'kittens' });
 
 // model
@@ -58,7 +59,7 @@ app.get('/kittens/remove/:name', function(req, res){
 // save: add documment
 // http://mongoosejs.com/docs/api.html#model_Model-save
 app.get('/kittens/add/:name', function(req, res){
-  var kitten = new Kitten({ name: req.params.name });
+  var kitten = new Kitten({ name: req.params.name, age:0 });
   console.log(kitten.name); // 'Silence'
 
   kitten.save(function (err, kittenadded, numberAffected) {
@@ -94,6 +95,23 @@ app.get('/kittens/findall', function(req, res){
 app.get('/kittens/find/:name', function(req, res){
     // find all
     Kitten.find({ name: req.params.name }, function (err, kittens) {
+      if (err) {
+        console.error(err);
+        res.send('Error');
+      } else {
+        console.log('Find all kittens:');
+        console.log(kittens);
+        res.json(kittens);
+      }
+    });
+
+});
+
+// update: http://mongoosejs.com/docs/api.html#model_Model.update
+// http://docs.mongodb.org/manual/reference/method/db.collection.update/
+app.get('/kittens/update/:name/:age', function(req, res){
+    // find all
+    Kitten.update({ name: req.params.name }, { $set: { age: req.params.age }}, function (err, kittens) {
       if (err) {
         console.error(err);
         res.send('Error');
