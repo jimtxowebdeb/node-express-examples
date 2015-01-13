@@ -103,3 +103,17 @@ $ mongo
 http://docs.mongodb.org/manual/tutorial/getting-started/
 
 ...
+
+## Openshift databases
+
+mysql, postgresql, mongodb, ...
+
+https://developers.openshift.com/en/databases-mysql.html
+
+##Heroku databases
+
+postgresql, mysql, mongodb, ...
+
+https://devcenter.heroku.com/articles/cleardb#the-complete-tutorial
+
+https://devcenter.heroku.com/articles/heroku-postgresql
