@@ -111,14 +111,14 @@ app.get('/kittens/find/:name', function(req, res){
 // http://docs.mongodb.org/manual/reference/method/db.collection.update/
 app.get('/kittens/update/:name/:age', function(req, res){
     // find all
-    Kitten.update({ name: req.params.name }, { $set: { age: req.params.age }}, function (err, kittens) {
+    Kitten.update({ name: req.params.name }, { $set: { age: req.params.age }}, {}, function (err, numberAffected, raw) {
       if (err) {
         console.error(err);
         res.send('Error');
       } else {
-        console.log('Find all kittens:');
-        console.log(kittens);
-        res.json(kittens);
+        console.log('numberAffected:');
+        console.log(numberAffected);
+        res.json(raw);
       }
     });
 
