@@ -1,3 +1,5 @@
-Don't Work
+http://mongoosejs.com/
 
-use gmail with OAUTH2
+Run:
+
+$ USER=xxxx PASSWORD=xxxx node app.js
