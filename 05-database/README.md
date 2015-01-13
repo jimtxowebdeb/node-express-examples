@@ -117,3 +117,7 @@ postgresql, mysql, mongodb, ...
 https://devcenter.heroku.com/articles/cleardb#the-complete-tutorial
 
 https://devcenter.heroku.com/articles/heroku-postgresql
+
+## MySQL Cloud database
+
+http://www.sitepoint.com/database-as-a-service-mysql-in-the-cloud/
