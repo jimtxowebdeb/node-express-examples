@@ -124,6 +124,20 @@ app.get('/kittens/update/:name/:age', function(req, res){
 
 });
 
+// update: http://mongoosejs.com/docs/api.html#model_Model.update
+app.get('/kittens/findoneandupdate/:name/:age', function(req, res){
+    // find all
+    Kitten.findOneAndUpdate({ name: req.params.name }, { $set: { age: req.params.age }}, function (err, kitten) {
+      if (err) {
+        console.error(err);
+        res.send('Error');
+      } else {
+        console.log('kitten:', kitten);
+        res.json(kitten);
+      }
+    });
+
+});
 
 
 var server = app.listen(process.env.PORT || 3000, function(){
