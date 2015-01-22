@@ -1,13 +1,17 @@
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
+function previewFile() {
+  //var preview = document.querySelector('img');
+  var preview = document.getElementById('img-logo');
+  var file    = document.querySelector('input[type=file]').files[0];
+  var reader  = new FileReader();
 
-// ctx.fillStyle = "green";
-// ctx.fillRect(10, 10, 100, 100);
+  reader.onloadend = function () {
+    preview.src = reader.result;
+    document.getElementById('base64').innerHTML = reader.result;
+  };
 
-var image = new Image();
-// image.src = "data:image/  png;base64,iJmCC";
-image.src = "zubirimanteo.png";
-
-image.onload = function() {
-    ctx.drawImage(image, 0, 0);
-};
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = "";
+  }
+}
