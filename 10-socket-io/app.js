@@ -16,6 +16,9 @@ io.on('connection', function(socket){
   });
 });
 
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+http.listen(port, ipaddress, function() {
+    //
+    console.log('listening on ' + ipaddress + ':' + port);
 });
