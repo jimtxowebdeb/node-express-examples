@@ -107,6 +107,66 @@ app.get('/kittens/find/:name', function(req, res){
 
 });
 
+app.get('/kittens/findAllName/', function(req, res){
+    // find all
+    Kitten.find({ }, 'name', function (err, kittens) {
+      if (err) {
+        console.error(err);
+        res.send('Error');
+      } else {
+        console.log('Find all kittens:');
+        console.log(kittens);
+        res.json(kittens);
+      }
+    });
+
+});
+
+app.get('/kittens/findAllNamev2/', function(req, res){
+    // find all
+    Kitten.find({ }, {'name':1}, function (err, kittens) {
+      if (err) {
+        console.error(err);
+        res.send('Error');
+      } else {
+        console.log('Find all kittens:');
+        console.log(kittens);
+        res.json(kittens);
+      }
+    });
+
+});
+
+app.get('/kittens/findAllNameNoId/', function(req, res){
+    // find all
+    Kitten.find({ }, '-_id name', function (err, kittens) {
+      if (err) {
+        console.error(err);
+        res.send('Error');
+      } else {
+        console.log('Find all kittens:');
+        console.log(kittens);
+        res.json(kittens);
+      }
+    });
+
+});
+
+app.get('/kittens/findAllNameNoIdv2/', function(req, res){
+    // find all
+    Kitten.find({ }, {'_id':0, 'name':1}, function (err, kittens) {
+      if (err) {
+        console.error(err);
+        res.send('Error');
+      } else {
+        console.log('Find all kittens:');
+        console.log(kittens);
+        res.json(kittens);
+      }
+    });
+
+});
+
 // update: http://mongoosejs.com/docs/api.html#model_Model.update
 // http://docs.mongodb.org/manual/reference/method/db.collection.update/
 app.get('/kittens/update/:name/:age', function(req, res){
