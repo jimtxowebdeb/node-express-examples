@@ -23,6 +23,11 @@ $ sudo apt-get install nodejs-legacy
 $ sudo apt-get install npm
 ```
 
+update npm:
+```
+$ sudo npm install -g npm
+```
+
 #### nodemon
 
 https://github.com/remy/nodemon
