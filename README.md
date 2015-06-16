@@ -12,6 +12,15 @@ http://expressjs.com/guide.html
 [http://nodejs.org/](http://nodejs.org/)
 
 ```
+from https://nodejs.org/download/
+
+# wget http://nodejs.org/dist/v0.12.4/node-v0.12.4-linux-x64.tar.gz
+# tar -C /usr/local --strip-components 1 -xzf node-v0.12.4-linux-x64.tar.gz
+# node -v
+# npm -v
+```
+OR
+```
 $ sudo apt-get install python-software-properties
 $ sudo add-apt-repository ppa:chris-lea/node.js  
 $ sudo apt-get update
