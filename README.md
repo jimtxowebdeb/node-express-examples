@@ -21,6 +21,13 @@ from https://nodejs.org/download/
 ```
 OR
 ```
+apt-get update
+apt-get install curl
+curl -sL https://deb.nodesource.com/setup | sudo bash -
+apt-get install -y nodejs
+```
+OR
+```
 $ sudo apt-get install python-software-properties
 $ sudo add-apt-repository ppa:chris-lea/node.js  
 $ sudo apt-get update
