@@ -40,6 +40,10 @@ $ sudo apt-get install nodejs
 $ sudo apt-get install nodejs-legacy
 $ sudo apt-get install npm
 ```
+update permissio:
+```
+sudo chown -R $(whoami) ~/.npm
+```
 
 update npm:
 ```
@@ -54,7 +58,7 @@ https://developer.chrome.com/devtools/index
 
 ```bash
 $ sudo npm install -g nodemon
-($ sudo chown -R yourusername ~/.npm)
+($ sudo chown -R $(whoami) ~/.npm)
 $ nodemon app.js
 ``` 
 #### debug:
