@@ -40,7 +40,7 @@ $ sudo apt-get install nodejs
 $ sudo apt-get install nodejs-legacy
 $ sudo apt-get install npm
 ```
-update permissio:
+update npm for EACCES error:
 ```
 sudo chown -R $(whoami) ~/.npm
 ```
