@@ -76,6 +76,7 @@ Using Vagrant:
 ```
 $ node-inspector &
 $ node --debug app.js
+(OR, $ node --debug-brk your-app.js)
 ```
 
 #### HTTP Request:
