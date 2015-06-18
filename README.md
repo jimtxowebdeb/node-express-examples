@@ -14,8 +14,11 @@ http://expressjs.com/guide.html
 ```
 from https://nodejs.org/download/
 
-# wget http://nodejs.org/dist/v0.12.4/node-v0.12.4-linux-x64.tar.gz
+# apt-get install -y curl
+# curl -SLO http://nodejs.org/dist/v0.12.4/node-v0.12.4-linux-x64.tar.gz
+(# wget http://nodejs.org/dist/v0.12.4/node-v0.12.4-linux-x64.tar.gz)
 # tar -C /usr/local --strip-components 1 -xzf node-v0.12.4-linux-x64.tar.gz
+# rm node-v0.12.4-linux-x64.tar.gz
 # node -v
 # npm -v
 ```
