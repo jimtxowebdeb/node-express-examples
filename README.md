@@ -72,6 +72,11 @@ https://github.com/node-inspector/node-inspector
 $ sudo npm install -g node-inspector
 $ node-debug app.js
 ```
+Using Vagrant:
+```
+$ node-inspector &
+$ node --debug app.js
+```
 
 #### HTTP Request:
 
