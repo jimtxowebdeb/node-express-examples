@@ -74,6 +74,8 @@ $ node-debug app.js
 ```
 Using Vagrant:
 ```
+$ node-debug --web-host 0.0.0.0 app.js 
+OR
 $ node-inspector &
 $ node --debug app.js
 (OR, $ node --debug-brk your-app.js)
