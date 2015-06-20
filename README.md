@@ -72,6 +72,11 @@ https://github.com/node-inspector/node-inspector
 $ sudo npm install -g node-inspector
 $ node-debug app.js
 ```
+debug + nodemon:
+```
+$ node-inspector &
+$ nodemon --debug app.js
+```
 Using Vagrant:
 ```
 $ node-debug --web-host 0.0.0.0 app.js 
