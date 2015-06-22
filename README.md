@@ -53,6 +53,13 @@ update npm:
 $ sudo npm install -g npm
 ```
 
+update node:
+```
+$ sudo npm cache clean -f
+$ sudo npm install -g n
+$ sudo n stable
+```
+
 #### nodemon
 
 https://github.com/remy/nodemon
