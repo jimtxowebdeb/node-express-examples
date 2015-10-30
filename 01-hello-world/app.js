@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
 
+app.get('/', function(req, res){
+	res.send('Kaixo');
+});
+
 // http://localhost:3000/hello.txt?q=xxxxxx
 app.get('/hello.txt', function(req, res) {
 

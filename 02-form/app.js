@@ -28,7 +28,9 @@ app.use(express.static(__dirname + '/public'));
 // OR
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/public/hello.html');
+  //res.sendFile(__dirname + '/public/hello.html');
+  // http://expressjs.com/4x/api.html#res.redirect
+  res.redirect('hello.html');
 });
 
 
