@@ -17,7 +17,7 @@ $ npm install --save mysql
 Mongdb, mysql, ...
 https://github.com/biggora/caminte#readme
 
-##### MySql
+## MySql
 ```bash
 $ sudo apt-get install mysql-server
 ```
