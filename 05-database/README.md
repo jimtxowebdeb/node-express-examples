@@ -13,6 +13,10 @@ $ npm install --save sequelize
 $ npm install --save mysql
 ```
 
+## Caminte - ORM
+Mongdb, mysql, ...
+https://github.com/biggora/caminte#readme
+
 ##### MySql
 ```bash
 $ sudo apt-get install mysql-server
