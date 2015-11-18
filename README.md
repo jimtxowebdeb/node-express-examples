@@ -6,6 +6,8 @@ http://nodejs.org/api/
 
 http://expressjs.com/guide.html
 
+http://www.nodebeginner.org/
+
 https://www.airpair.com/javascript/complete-expressjs-nodejs-mongodb-crud-skeleton
 
 https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
