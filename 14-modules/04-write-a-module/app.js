@@ -1,3 +1,3 @@
-var x = require("module-name");
+var x = require("./module-name");
 
 console.log(x);
