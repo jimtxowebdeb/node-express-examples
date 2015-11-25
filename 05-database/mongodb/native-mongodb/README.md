@@ -15,6 +15,19 @@ $ chmod a+x mongod
 $ ./mongod
 ```
 
+####MongoDB reference
+https://docs.mongodb.org/manual/reference/
+
+```
+$ mongo
+
+> help
+> show dbs
+> db.createCollection("test")
+
+> db.test.****
+```
+
 ####Install mongodb driver
 ```
 $ sudo apt-get install libkrb5-dev
