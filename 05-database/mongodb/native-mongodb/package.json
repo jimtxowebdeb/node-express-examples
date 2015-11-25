@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "main": "app.js",
   "dependencies": {
-    "mongodb": "^2.0.48"
+    "mongodb": "^2.0.49"
   }
 }
