@@ -6,6 +6,8 @@ http://sailsjs.org/
 
 http://krakenjs.com/
 
+https://strongloop.com/node-js/loopback-framework/
+
 http://koajs.com/
 
 ...
