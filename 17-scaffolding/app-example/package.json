@@ -1,0 +1,12 @@
+{
+  "name": "app-example",
+  "version": "1.0.0",
+  "description": "app scaffolding",
+  "main": "app.js",
+  "author": "zmwebdev",
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "mongodb": "^2.1.1"
+  }
+}
