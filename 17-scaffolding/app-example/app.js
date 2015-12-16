@@ -1,15 +1,22 @@
-var MongoClient = require('mongodb').MongoClient
+var express = require('express')
+  , app = express()
 
-var URL = 'mongodb://localhost:27017/mydatabase'
+var db = require('models/db')
 
-MongoClient.connect(URL, function(err, db) {
-  if (err) return
+app.engine('jade', require('jade').__express)
+app.set('view engine', 'jade')
 
-  var collection = db.collection('foods')
-  collection.insert({name: 'taco', tasty: true}, function(err, result) {
-    collection.find({name: 'taco'}).toArray(function(err, docs) {
-      console.log(docs[0])
-      db.close()
+app.use('/comments', require('controllers/comments'))
+app.use('/users', require('controllers/users'))
+
+// Connect to Mongo on start
+db.connect('mongodb://localhost:27017/mydatabase', function(err) {
+  if (err) {
+    console.log('Unable to connect to Mongo.')
+    process.exit(1)
+  } else {
+    app.listen(3000, function() {
+      console.log('Listening on port 3000...')
     })
-  })
+  }
 })
