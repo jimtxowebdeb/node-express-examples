@@ -10,6 +10,8 @@ app.engine('handlebars', require('express-handlebars'))
 app.set('view engine', 'handlebars');
 
 app.use('/comments', require('./controllers/comments'))
+app.use('/session', require('./controllers/session'))
+
 // app.use('/users', require('./controllers/users'))
 
 // Connect to Mongo on start
