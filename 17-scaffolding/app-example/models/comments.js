@@ -15,3 +15,13 @@ exports.recent = function(cb) {
     cb(err, docs)
   })
 }
+
+
+exports.insert = function(comments, cb) {
+  var collection = db.get().collection('comments')
+
+  collection.insertMany(comments, function(err, result) {
+    cb(err, result);
+  });  
+  
+}
