@@ -30,6 +30,21 @@ app.get('/hello', function(req, res) {
 });
 
 
+app.get('/destroy', function(req, res) {
+	console.log("/destroy");
+	if (req.session) {
+        req.session.destroy(function(err) {
+            if (err) throw err;
+            res.send("Session destroyed");
+        })
+	} else {
+        res.send("No session to destroy");
+	}
+});
+
+
+
+
 var server = app.listen(process.env.PORT || 3000, function(){
     console.log('Listening in port %d', server.address().port);
 });
