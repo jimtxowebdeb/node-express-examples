@@ -5,9 +5,16 @@ var express = require('express'),
 
 var app = express();
 
-// app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+// using default layout
+//app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+// change default layouts dir
+//app.engine('handlebars', exphbs({layoutsDir:'views/layouts/'}));
+
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+// set template default dir
+//app.set('views', __dirname + '/views');
+
 
 app.get('/', function (req, res) {
     res.render('home');
