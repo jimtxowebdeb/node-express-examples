@@ -18,7 +18,25 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
 var multer  = require('multer')
-var upload = multer({dest: __dirname + '/public/uploads/'})
+// first option:
+// var upload = multer({dest: __dirname + '/public/uploads/'})
+
+// other option, renaming file:
+
+var storage = multer.diskStorage({
+  destination: __dirname + '/public/uploads/',
+  filename: function (req, file, cb) {
+    // cb(null, file.fieldname + '-' + Date.now())
+    cb(null, file.originalname)
+  }
+})
+
+// Other option: using buffer
+// var storage = multer.memoryStorage()
+
+var upload = multer({ storage: storage })
+
+
 
 // **********************************************
 
@@ -29,7 +47,6 @@ app.get('/', function (req, res) {
 });
 
 // POST /user/
-
 app.post('/upload', upload.single('image'), function (req, res) {
     // req.file is the `avatar` file 
     // req.body will hold the text fields, if there were any 

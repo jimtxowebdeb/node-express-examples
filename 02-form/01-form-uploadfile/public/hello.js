@@ -19,8 +19,8 @@ $(document).ready(function(){
            type: "POST",
            url: "/upload",
            // important to upload images
-           //contentType: 'multipart/form-data',
-           contentType: false,
+           contentType: 'multipart/form-data',
+           //contentType: false,
            //dataType: "json",
            dataType: "html",
            data: formData,
