@@ -22,14 +22,17 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
-      var socket;
+      var socket = io.connect('/');
       var serverName = window.location.hostname;
-
+      
+      /*
       if ((serverName == "localhost") || (serverName == "127.0.0.1")) {
         socket = io();
       } else {
         socket = io('wss://'+serverName+':8443');
       } 
+      */
+
       
       $('form').submit(function(){
         socket.emit('chat message', $('#m').val());
