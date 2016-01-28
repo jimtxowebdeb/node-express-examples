@@ -75,6 +75,23 @@ app.get('/kittens/add/:name', function(req, res){
 
 });
 
+app.get('/kittens/add/:name/:age', function(req, res){
+  var kitten = new Kitten({ name: req.params.name, age:req.params.age });
+  console.log(kitten.name); // 'Silence'
+
+  kitten.save(function (err, kittenadded, numberAffected) {
+    if (err) {
+      console.error(err);
+      res.send('Error');
+    } else {
+      console.log('kitten created:');
+      console.log(kittenadded);
+      res.json(kittenadded);
+    }
+  });
+
+});
+
 // find
 // http://mongoosejs.com/docs/api.html#model_Model.find
 app.get('/kittens/findall', function(req, res){
@@ -188,6 +205,21 @@ app.get('/kittens/update/:name/:age', function(req, res){
 app.get('/kittens/findoneandupdate/:name/:age', function(req, res){
     // find all
     Kitten.findOneAndUpdate({ name: req.params.name }, { $set: { age: req.params.age }}, function (err, kitten) {
+      if (err) {
+        console.error(err);
+        res.send('Error');
+      } else {
+        console.log('kitten:', kitten);
+        res.json(kitten);
+      }
+    });
+
+});
+
+// AVG age
+app.get('/kittens/avg', function(req, res){
+    // find all
+    Kitten.aggregate([{ $group: { _id: "$name", average: { $avg: "$age" } }}], function (err, kitten) {
       if (err) {
         console.error(err);
         res.send('Error');
