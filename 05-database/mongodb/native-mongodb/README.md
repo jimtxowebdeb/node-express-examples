@@ -26,6 +26,9 @@ $ mongo
 > db.createCollection("test")
 
 > db.test.****
+
+// avg in 'documents' collection {a : 1}, {a : 2}, {a : 3}
+> db.documents.aggregate([{$group:{_id:"a",avgTotal:{$avg:"$a"}}}])
 ```
 
 ####Install mongodb driver
