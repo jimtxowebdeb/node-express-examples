@@ -124,6 +124,37 @@ app.get('/kittens/find/:name', function(req, res){
 
 });
 
+app.get('/kittens/findagelte/:val', function(req, res){
+    // $lte selects the documents where the value of the field is less than or equal to (i.e. <=) the specified value.
+    // https://docs.mongodb.org/manual/reference/operator/query/lte/#op._S_lte
+    Kitten.find({ age: { $lte : req.params.val } }, function (err, kittens) {
+      if (err) {
+        console.error(err);
+        res.send('Error');
+      } else {
+        console.log('Find all kittens:');
+        console.log(kittens);
+        res.json(kittens);
+      }
+    });
+
+});
+
+app.get('/kittens/findnamestartwith/:val', function(req, res){
+    // https://docs.mongodb.org/manual/reference/operator/query/regex/
+    Kitten.find({ name: { $regex: ".b*." } }, function (err, kittens) {
+      if (err) {
+        console.error(err);
+        res.send('Error');
+      } else {
+        console.log('Find all kittens:');
+        console.log(kittens);
+        res.json(kittens);
+      }
+    });
+
+});
+
 app.get('/kittens/findAllName/', function(req, res){
     // find all
     Kitten.find({ }, 'name', function (err, kittens) {
