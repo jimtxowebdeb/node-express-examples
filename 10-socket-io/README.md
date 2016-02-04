@@ -11,4 +11,6 @@ https://github.com/zmwebdev/node-express-examples/issues/40
 
 ###OpenShift:
 
+https://developers.openshift.com/en/managing-port-binding-routing.html
+
 http://socketio-zmwebdev.rhcloud.com/
