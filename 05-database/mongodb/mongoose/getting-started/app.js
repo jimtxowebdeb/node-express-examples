@@ -10,7 +10,9 @@ var express = require('express');
 var app = express();
 
 // database connection
-mongoose.connect('mongodb://'+user+':'+password+'@ds033400.mongolab.com:33400/zmwebdev-test');
+// Mongolabs eguneratu egin dute 3.0 bertsiora eta ScramSHA1 encriptazio sistema erabiltzen dute...Konexioan aipatu egin behar da:
+// https://github.com/controlacceso/control_acceso/issues/314
+mongoose.connect('mongodb://'+user+':'+password+'@ds033400.mongolab.com:33400/zmwebdev-test',{authMechanism: 'ScramSHA1'});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback() {
