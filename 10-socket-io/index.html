@@ -20,18 +20,20 @@
     </form>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
-      var socket = io.connect('/');
+      //var socket = io.connect('/');
+      //socket = io();
       var serverName = window.location.hostname;
       
-      /*
+      
+      var socket;
       if ((serverName == "localhost") || (serverName == "127.0.0.1")) {
         socket = io();
       } else {
         socket = io('wss://'+serverName+':8443');
       } 
-      */
+      
 
       
       $('form').submit(function(){
