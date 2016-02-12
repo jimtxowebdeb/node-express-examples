@@ -1,3 +1,5 @@
 node_modules
 keys
 env.js
+05-database/mongodb/native-mongodb/data/
+05-database/mongodb/native-mongodb/mongod
