@@ -4,7 +4,11 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "express": "4.x",
-    "express-session": "^1.8.2"
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.13.0",
+    "jade": "^1.11.0"
   }
 }
