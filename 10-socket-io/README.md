@@ -6,6 +6,10 @@ https://blog.openshift.com/run-your-nodejs-projects-on-openshift-in-two-simple-s
 
 https://github.com/zmwebdev/MQTT/blob/master/client/web-mqtt-client.js
 
+Other options to create real-time apps:
+
+https://github.com/zmwebdev/node-express-examples/issues/21
+
 ###Use with modules
 https://github.com/zmwebdev/node-express-examples/issues/40
 
