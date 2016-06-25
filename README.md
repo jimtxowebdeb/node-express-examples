@@ -12,6 +12,8 @@ https://www.airpair.com/javascript/complete-expressjs-nodejs-mongodb-crud-skelet
 
 https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
 
+https://www.coursera.org/learn/server-side-development
+
 
 ### Install nodejs
 
