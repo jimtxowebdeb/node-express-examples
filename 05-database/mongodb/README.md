@@ -19,3 +19,5 @@ DB migration:
 http://docs.mlab.com/migrating/
 
 https://mlab.com/databases/zmwebdev-test#tools
+
+http://zaiste.net/2012/08/importing_json_into_mongodb/
