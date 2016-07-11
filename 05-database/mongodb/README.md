@@ -8,8 +8,12 @@ Reusing connection:
 
 http://stackoverflow.com/questions/24621940/how-to-properly-reuse-connection-to-mongodb-across-nodejs-application-and-module
 
-MongoLab - Mlab:
+##MongoLab - Mlab:
 
 Error remote connection:
 
 https://github.com/zmwebdev/node-express-examples/issues/51
+
+DB migration:
+
+http://docs.mlab.com/migrating/
