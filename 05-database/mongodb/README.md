@@ -1,5 +1,7 @@
 https://docs.mongodb.com/manual/reference/sql-comparison/
 
+https://docs.mongodb.com/manual/aggregation/
+
 https://docs.mongodb.org/
 
 https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
