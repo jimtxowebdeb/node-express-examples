@@ -51,6 +51,7 @@ mysql> SELECT User FROM mysql.user;
 
 // http://stackoverflow.com/questions/17666249/how-to-import-a-sql-file-using-the-command-line-in-mysql
 $ mysql -u username -p database_name < file.sql
+$ mysql -u zmwebdev c9 < todo.sql
 $ mysqldump db_name > backup-file.sql
 ```
 
