@@ -12,4 +12,6 @@ https://strongloop.com/node-js/loopback-framework/
 
 http://koajs.com/
 
+http://senecajs.org/ (microservices)
+
 ...
