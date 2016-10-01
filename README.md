@@ -117,3 +117,5 @@ $ sudo apt-get install curl
 Postman (chrome extension):
 
 https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm
+
+JSONViewe: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc
