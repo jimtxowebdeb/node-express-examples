@@ -1,0 +1,3 @@
+- http://couchdb.apache.org/
+- https://pouchdb.com/
+- https://cloudant.com
