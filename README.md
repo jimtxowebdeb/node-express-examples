@@ -17,6 +17,10 @@ https://www.coursera.org/learn/server-side-development
 
 ### Install nodejs
 
+```
+$ sudo apt-get install nodejs-legacy npm
+```
+
 [http://nodejs.org/](http://nodejs.org/)
 
 ```
