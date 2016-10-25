@@ -85,6 +85,13 @@ $ nodemon app.js
 ``` 
 #### debug:
 
+DevTool:
+- https://github.com/Jam3/devtool
+- https://mattdesl.svbtle.com/debugging-nodejs-in-chrome-devtools
+```
+To test
+```
+Node-inspector:
 https://github.com/node-inspector/node-inspector
 
 ```bash
