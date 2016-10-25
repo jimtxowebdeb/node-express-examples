@@ -84,10 +84,10 @@ $ sudo npm install -g nodemon
 $ nodemon app.js
 ``` 
 #### debug:
+https://mattdesl.svbtle.com/debugging-nodejs-in-chrome-devtools
 
 DevTool:
-- https://github.com/Jam3/devtool
-- https://mattdesl.svbtle.com/debugging-nodejs-in-chrome-devtools
+https://github.com/Jam3/devtool
 ```
 To test
 ```
