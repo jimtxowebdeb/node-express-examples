@@ -98,6 +98,8 @@ https://github.com/node-inspector/node-inspector
 $ sudo npm install -g node-inspector
 $ node-debug app.js
 ```
+If error: https://github.com/node-inspector/node-inspector/issues/907
+
 debug + nodemon:
 ```
 $ node-inspector &
