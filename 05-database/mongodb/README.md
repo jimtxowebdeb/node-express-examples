@@ -6,6 +6,8 @@ https://docs.mongodb.org/
 
 https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
 
+https://university.mongodb.com/
+
 IDEs: https://docs.mongodb.org/ecosystem/tools/administration-interfaces/
 
 Reusing connection:
