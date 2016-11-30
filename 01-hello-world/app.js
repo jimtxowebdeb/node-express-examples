@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req, res){
-	res.send('Kaixo');
+	res.send('Kaixo2');
 });
 
 // http://localhost:3000/hello.txt?q=xxxxxx
