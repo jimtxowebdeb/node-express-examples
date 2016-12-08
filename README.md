@@ -20,7 +20,7 @@ https://www.coursera.org/learn/server-side-development
 ```
 $ sudo apt-get install nodejs-legacy npm
 $ sudo npm install -g n
-$ n stable
+$ sudo n stable
 ```
 
 [http://nodejs.org/](http://nodejs.org/)
