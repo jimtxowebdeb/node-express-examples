@@ -21,6 +21,8 @@ https://www.coursera.org/learn/server-side-development
 $ sudo apt-get install nodejs-legacy npm
 $ sudo npm install -g n
 $ sudo n stable
+# in c9
+$ nvm install v6.9.2
 ```
 
 [http://nodejs.org/](http://nodejs.org/)
