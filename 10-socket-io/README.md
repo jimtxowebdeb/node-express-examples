@@ -30,4 +30,5 @@ https://docs.c9.io/docs/multiple-ports
 http://www.websocket.org/
 
 ###Other
-http://www.socketstream.org/
+- http://www.socketstream.org/
+- https://firebase.google.com/
