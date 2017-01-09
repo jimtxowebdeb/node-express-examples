@@ -1,0 +1,3 @@
+- https://www.owasp.org
+- https://www.owasp.org/images/f/f8/OWASP_Top_10_-_2013.pdf
+- https://www.owasp.org/index.php/OWASP_Node_js_Goat_Project
