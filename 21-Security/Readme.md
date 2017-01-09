@@ -3,4 +3,5 @@
 - https://www.owasp.org/index.php/OWASP_Node_js_Goat_Project
 - http://cwe.mitre.org/top25/archive/
 - https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
+- https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project
 - https://github.com/WebGoat/WebGoat
