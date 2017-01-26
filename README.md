@@ -24,6 +24,12 @@ $ sudo n stable
 # in c9
 $ nvm install v6.9.2
 ```
+Debian:
+ - https://nodejs.org/en/download/package-manager/
+```
+$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+```
 
 [http://nodejs.org/](http://nodejs.org/)
 
