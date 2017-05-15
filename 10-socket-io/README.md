@@ -33,3 +33,4 @@ http://www.websocket.org/
 - http://www.socketstream.org/
 - https://firebase.google.com/
 - https://pusher.com/
+- https://redis.io/clients
