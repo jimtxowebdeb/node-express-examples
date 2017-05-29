@@ -22,6 +22,7 @@ $ sudo apt-get install nodejs-legacy npm
 $ sudo npm install -g n
 $ sudo n stable
 # in c9
+# https://github.com/creationix/nvm
 $ nvm install v6.9.2
 ```
 Debian:
