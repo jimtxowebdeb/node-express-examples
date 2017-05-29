@@ -23,6 +23,7 @@ $ sudo npm install -g n
 $ sudo n stable
 # in c9
 # https://github.com/creationix/nvm
+# this is a local install, so don't use sudo
 $ nvm install v6.9.2
 ```
 Debian:
