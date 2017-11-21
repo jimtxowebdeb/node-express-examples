@@ -1,4 +1,5 @@
 - https://thedevs.network/blog/build-a-simple-telegram-bot-with-node-js
+- https://github.com/telegraf/telegraf
 
 ```
 npm init
@@ -15,4 +16,10 @@ app.hears('hi', ctx => {
 });
 
 app.startPolling();
+```
+
+Run:
+
+```
+BOT_TOKEN=... node app.js 
 ```
