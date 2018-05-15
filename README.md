@@ -97,6 +97,19 @@ $ sudo npm install -g nodemon
 $ nodemon app.js
 ``` 
 #### debug:
+
+
+https://medium.com/the-node-js-collection/debugging-node-js-with-google-chrome-4965b5f910f4
+
+```
+node --inspect app.js
+```
+ondoren chromen 'about:inspect' egin eta linka ireki
+
+
+
+**Hemendik aurrerako dokumentazioa zarra da!!**
+
 https://mattdesl.svbtle.com/debugging-nodejs-in-chrome-devtools
 
 DevTool:
