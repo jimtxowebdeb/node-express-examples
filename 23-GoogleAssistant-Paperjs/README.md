@@ -1,0 +1,3 @@
+- http://deeplocal.com/postermaker/
+- https://github.com/Deeplocal/assistant-poster-machine
+- http://paperjs.org/
